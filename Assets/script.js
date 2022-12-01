@@ -30,7 +30,9 @@ var charSpecial = [
 // Convert char26 uppercase string into lowercase string by using toLowerCase() string method
 var char26Lower = char26.toLowerCase();
 
-// Convert uppercase and lowercase strings into an array by using Array.from method, as this is more efficient than having to type the alphabet array ["A", "B", "C", and so on] manually.
+/* Convert uppercase and lowercase strings into an array by using Array.from method. This is significantly more efficient 
+than typing the alphabet array ["A", "B", "C", and so on] manually.*/
+
 var charUpper = Array.from(char26);
 var charLower = Array.from(char26Lower)
 
@@ -39,11 +41,10 @@ var charLower = Array.from(char26Lower)
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  confirmLength = prompt("Please specify the length of your password between 8-128 characters");
+  confirmLength = prompt("Please specify the length of your password between 8-128 characters.");
   console.log(confirmLength)
 
-  /* Expected behavior: If a user enters an incorrect value, e.g. a number that's less than 8,  a number that's greater than 128, 
-  a negative number, or a blank, then an alert message would appear and exit once the user clicks 'ok.'
+  /* If a user enters an incorrect value, then an alert message would appear and exit once the user clicks 'ok.'
 
   If the user enters a correct value of the password link, a confirmation message would appear before proceeding to the password
   criteria specification.
@@ -54,16 +55,16 @@ function generatePassword() {
   */
  
   if(confirmLength < 8 || confirmLength > 128){
-    alert("Error: Your password must be between 8-128 characters. Please try again");
+    alert("Error: Your password must be between 8-128 characters. Please try again.");
     return
   }
-    alert("Your password will have " + confirmLength + " characters");
+    alert("Your password will have " + confirmLength + " characters.");
   
   // Determine password criteria -- 'Ok' = true; 'Cancel' = false
   
       var confirmUpper = confirm("Would you like to include uppercase characters in your password? Click 'OK' if you do.");
       var confirmLower = confirm("Would you like to include lowercase characters in your password? Click 'OK' if you do.");
-      var confirmNumber = confirm("Would you like to include numbers in your password? Click 'OK' if you do.");
+      var confirmNumber = confirm("Would you like to include numeric characters in your password? Click 'OK' if you do.");
       var confirmSpecial = confirm("Would you like to include special characters in your password? Click 'OK' if you do.");
   
   /* If the user answers outside the parameters (i.e., not selecting any criteria) an alert message would appear, asking the
@@ -71,10 +72,10 @@ function generatePassword() {
   password length again. */
 
       while (confirmUpper === false && confirmLower === false && confirmNumber === false && confirmSpecial === false) {
-      alert("Error! You must specify at least 1 parameter to generate a password");
+      alert("Error! You must specify at least 1 parameter to generate a password.");
       var confirmUpper = confirm("Would you like to include uppercase characters in your password? Click 'OK' if you do.");
       var confirmLower = confirm("Would you like to include lowercase characters in your password? Click 'OK' if you do.");
-      var confirmNumber = confirm("Would you like to include numbers in your password? Click 'OK' if you do.");
+      var confirmNumber = confirm("Would you like to include numeric characters in your password? Click 'OK' if you do.");
       var confirmSpecial = confirm("Would you like to include special characters in your password? Click 'OK' if you do.");
       }
 
@@ -82,8 +83,8 @@ function generatePassword() {
   confirm() method above, each variable has its own conditional statement and will be concatenated in passwordCombo variable 
   with concat() if the conditional statement is true. */
   
-  var passwordCombo = [] // As concat() method only works on array, var passwordCombo is assigned an empty array and concatenated with the variable(s) conditional statement that returns true.
-
+  var passwordCombo = [] /* As concat() method only works on array, var passwordCombo is assigned an empty array and 
+                            concatenated with the variable(s) conditional statement that returns true.*/
   if (confirmUpper) {
     passwordCombo = passwordCombo.concat(charUpper)
   }
@@ -107,13 +108,18 @@ function generatePassword() {
   console.log(passwordCombo)
 
 
-  /* Generate a random with the 'for' loop - the expressions in the loop behaves as a counter, dictating how many times the 
-  code that follows (i.e., the user's specify password length) will run.
+  /* Generate a random password with the 'for' loop - the expressions in the loop behaves like a counter, dictating how many 
+  times the code that follows will run (i.e., consistent to the user's specified password length).
   
   We want the final random generated password to be a string, hence a var randomPassword is declared and assigned an empty 
   string value. The code within the 'for' loop will thereafter replace the randomPassword empty string with the newly created
   value, and the newly created value will be replaced by the newly created value, the process which is repeated for the same
-  number of times as the password length.
+  number of times as the specified password length.
+
+  As the passwordCombo in the equation is a concatenated array of characters, each character has its own index, and 
+  Math.floor(Math.random() * passwordCombo.length) must be used to get a random index position (hence, they are inside the 
+  square bracket). As Math.random() would generate a decimal which is not available in an array index, Math.floor() is required
+  to round the number down into a whole number.
   */
   
   var randomPassword = ""
