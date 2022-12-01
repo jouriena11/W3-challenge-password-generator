@@ -19,7 +19,7 @@ The primary purpose of this challenge is to familiarize us with
 * Math.random() and Math.floor (https://www.w3schools.com/js/js_random.asp)
 
 ## **URLs**
-- [Deployed Application URL]()
+- [Deployed Application URL](https://jouriena11.github.io/W3-challenge-password-generator/)
 - [GitHub Repository URL](https://github.com/jouriena11/W3-challenge-password-generator)
 
 ## **Lessons learnt / Key takeaways**
@@ -38,50 +38,71 @@ The password generator must be able to:
 
     >Please specify the length of your password between 8-128 characters
 
-![Please specify the length of your password between 8-128 characters](./Assets/img/confirm-pw-length.jpg)
+    <p align="left">
+    <img width=600px src="./Assets/img/confirm-pw-length.jpg">
+    </p>
 
 - If the user enter an incorrect value (e.g. a number that's less than 8, a number that's greater than 128,
   a negative number, a text, or a blank), the following alert message will appear and the user will have to click the 'Generate Password' button again to re-start the prompt.
 
     >Error: Your password must be between 8-128 characters. Please try again.
 
-    ![Error: Your password must be between 8-128 characters. Please try again.](./Assets/img/error_incorrect-pw-length.jpg)
+    <p align="left">
+    <img width=600px src="./Assets/img/error_incorrect-pw-length.jpg">
+    </p>
 
 - When the use enters a correct value (i.e., a number between 8 and 128), the following alert message will appear before proceeding to the next password criteria.
 
     >Your password will have (specified length) characters.
 
-    ![Your password will have (specified length) characters.](./Assets/img/password-length-confirmation.jpg)
+    <p align="left">
+    <img width=600px src="./Assets/img/password-length-confirmation.jpg">
+    </p>
 
 - When prompting the user to confirm whether or not to include uppercase character in the password, the following confirm() message will appear:
 
     >Would you like to include uppercase characters in your password? Click 'OK' if you do.
 
-    ![Would you like to include uppercase characters in your password? Click 'OK' if you do.](./Assets/img/confirm-uppercase.jpg)
+    <p align="left">
+    <img width=600px src="./Assets/img/confirm-uppercase.jpg">
+    </p>
 
 - When prompting the user to confirm whether or not to include lowercase character in the password, the following confirm() message will appear:
 
     >Would you like to include lowercase characters in your password? Click 'OK' if you do.
 
-    ![Would you like to include lowercase characters in your password? Click 'OK' if you do.](./Assets/img/confirm-lowercase.jpg)
+    <p align="left">
+    <img width=600px src="./Assets/img/confirm-lowercase.jpg">
+    </p>
 
 - When prompting the user to confirm whether or not to include numeric character in the password, the following confirm() message will appear:
 
     >Would you like to include numeric characters in your password? Click 'OK' if you do.
 
-    ![Would you like to include numeric characters in your password? Click 'OK' if you do.](./Assets/img/confirm-numberChar.jpg)
+    <p align="left">
+    <img width=600px src="./Assets/img/confirm-numberChar.jpg">
+    </p>
 
 - When prompting the user to confirm whether or not to include special character in the password, the following confirm() message will appear:
 
     >Would you like to include special characters in your password? Click 'OK' if you do.
 
-    ![Would you like to include special characters in your password? Click 'OK' if you do.](./Assets/img/confirm-special-char.jpg)
+    <p align="left">
+    <img width=600px src="./Assets/img/confirm-special-char.jpg">
+    </p>
+
 
 - If the user fails to select at least 1 criteria, the following alert message will appear:
 
     >Error! You must specify at least 1 parameter to generate a password.
 
-    ![Error! You must specify at least 1 parameter to generate a password.](./Assets/img/error_must-specify-min-1-criteria.jpg)
+    <p align="left">
+    <img width=600px src="./Assets/img/error_must-specify-min-1-criteria.jpg">
+    </p>
 
 - The user is presented with a generated random password in the text area (i.e., inside the dashed-border box), replacing the placeholder text.
+
+    <p align="left">
+    <img width=600px src="./Assets/img/generated-password.jpg">
+    </p>
 
